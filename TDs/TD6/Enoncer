@@ -1,0 +1,23 @@
+Série N°6 :
+
+Soient les relations suivantes :
+   Matière (Num_mat, Nom_mat, Coef_mat)
+   Etudiant (Num_etud, Nom_etud, Classe_etud)
+   Examen (Num_mat, Num_etud, Note, Trimestre)
+   Tp (Num_mat, Num_tp, Num_etud, Not_tp)
+
+Ecrire les requêtes suivantes en S.Q.L:
+1. quel sont les noms des étudiants de la deuxième année, qui ont une note supérieur à 10 dans la matière de la base de données.
+2. quelle est la plus  grande note à l’examen obtenue par l’étudiant de numéro 23 :
+   a. pour la matière de compilation
+   b. pour chaque matière.
+3. quel est le nombre d’étudiants qui ont la note inférieure à 7 en base de données.
+4. quel est le nombre d’étudiants ayant des moyennes supérieures à 15 dans toutes les matières pour chaque classe.
+5. lister toutes les matières qui n’ont pas des Tp.
+6. on veut modifier la note du Tp, afin d’augmenter la note finale de la moyenne générale de 0.02, sachant que le pourcentage du Tp et 20%.
+7. créer une table temporaire « Finale » et y insérer les tuples concernant la note finale d’un étudiant pour chaque matière, avec : 
+   a. NoteFinal= (2*(note semestre1+note semestre2)+note Tp)/5 si la matière à une note de Tp.
+   b. NoteFinal= moyenne (note cours) 
+8. on veut connaître (lister) dans quelle classe sera chaque étudiant après la fin d’étude ; sachant que les classes sont numérotées de 1 à 4, qu’il n y a aucun étudiant en classe 4 et qu’un étudiant passe en classe suivante s’il a obtenu 10 comme moyenne générale.
+9. on veut générer la table suivante (classe, num_mat), donnant pour chaque classe les matières suivies par la classe. 
+10. afficher le bulletin annuel pour chaque étudiant. 
