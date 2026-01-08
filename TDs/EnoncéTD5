@@ -1,0 +1,21 @@
+Exercice :
+On considère l’étude de cas N°1 « Gestion de stock ».
+Ecrire les requêtes suivantes en (SQL) :
+1. Créer une base de données pour la gestion de stock de la société (X).
+2. Lister tous les clients qu’ont passé au moins une commande et qui habitent la ville de Tanger.
+3. Lister tous les articles dont la quantité commandée est supérieur à celle dans le stock.
+4. Lister le nombre de commandes passées par chaque client.
+5. Lister tous les clients qui ont commandé les articles dont la quantité est supérieure à celle dans le stock.
+6. Lister tous les clients qui ont dépassé un montant de 10.000 Dh par commande.
+7. Lister tous les clients qui ont dépassé un montant de 100.000 DH par toutes les commandes .
+8. Calculer le taux d’achat pour chaque client .
+9. Lister les clients qui ont dépassé le montant d’achat 10.000 DH par produit.
+10. Compter le nombre de commande passé par chaque client.
+11. (À Refaire !!!) Lister toutes les commandes dont la quantité commandée d’article est supérieure à une quantité de même article d’une commande du client « code1 ».
+12. Lister tous les clients de la ville de Tanger qui n’ont passé aucune commande.
+13. Lister toutes les sociétés de distribution de Rabat qui ont livrées le produit P1.
+14. Lister les fournisseurs du produit A1.
+15. Afficher le produit le plus commandé.
+16. (À Refaire !!!) Citer les sociétés qui livrent le produit le plus commandé.
+17. Calculer le stock de chaque produit
+18. Afficher le revenu de chaque produit entre la date D1 et D2 suivant l’ordre décroissant 
