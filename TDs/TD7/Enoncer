@@ -1,0 +1,30 @@
+Série N° 7 :
+La base de donnée appelée « Facturation » est composée de trois relations qui peuvent être schématisées comme suite :
+Facture :       Num_Fac                     Date_Fac               Total
+                 3                          05/12/96                 10
+                 4                          07/12/96                 20
+
+
+Article :       Num_Art                    Description              PU
+                 1                             Imp                  100
+                 3                             Pc                  10000
+
+
+Lign_Fac :  Num_Lign                       Num_Art                 Qte_Comd                     Montant
+                 3                            1                         10                        10
+                 1                            2                         50                       100
+
+
+Travail à faire :  
+1. Créer la base de données « Facturation » et ses 3 relations avec la précision sur les attributs nécessaires.
+2. Ajouter l’attribut num_cli dans la table facture.
+3. Montrer comment on a inséré la 1ère ligne de la table T2 et la table T3.
+4. Afficher les données des trois tables de la base de données « Facturation ».
+5. Afficher le nombre de factures effectués entre la date D1 et D2.
+6. Afficher les articles dont le prix est supérieure à 500 ou ne dépasse pas 350.
+7. Augmenter le prix unitaire d’une somme forfaitaire de 5.
+8. Limiter l’utilisation de la base de données pour l’administrateur KIKI.
+9. Donner le droit de consulter la table T1 pour KAKA et KOKO.
+10. Supprimer le droit de consultation de T1 pour KOKO.
+11. Supprimer la table T2.
+
