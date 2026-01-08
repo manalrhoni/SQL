@@ -396,6 +396,11 @@ WHERE liv.Code_Art = (
     LIMIT 1
 );
 
+-- Q17 : Calculer le stock de chaque produit.
+-- Analyse : Simple sélection des colonnes Nom et Stock.
+SELECT Nom_Art, Qte_Stock 
+FROM Article;
+
 -- Q18 : Afficher le revenu de chaque produit entre deux dates, trié par revenu décroissant.
 -- Analyse :
 -- 1. WHERE : On filtre d'abord les commandes sur la période (AVEC des guillemets !).
