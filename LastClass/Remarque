@@ -1,0 +1,64 @@
+/* =============================================================================
+RÉSUMÉ SÉCURITÉ (DCL) - À CONNAÎTRE
+
+CREATE USER : Créer un nouvel utilisateur (le Login + Mot de passe).
+
+GRANT (Donner) : Donner une permission (Le Feu Vert 🟢).
+
+REVOKE (Retirer): Enlever une permission (Le Feu Rouge 🔴).
+=============================================================================
+*/
+
+- ==============================================================================
+-- Q8 : Limiter l’utilisation de la base de données pour l’administrateur KIKI.
+-- ==============================================================================
+-- Analyse : KIKI doit être administrateur (ALL PRIVILEGES) sur la base 'Facturation'.
+
+- 1. Création du compte (Si il n'existe pas déjà)
+CREATE USER IF NOT EXISTS 'KIKI'@'localhost' IDENTIFIED BY '1234';
+
+- 2. On lui donne le Feu Vert TOTAL (Admin)
+GRANT ALL PRIVILEGES ON Facturation.* TO 'KIKI'@'localhost';
+
+- 3. On valide les droits
+FLUSH PRIVILEGES;
+
+==============================================================================
+-- Q9 : Donner le droit de consulter la table T1 (Facture) pour KAKA et KOKO.
+-- ==============================================================================
+-- Analyse : On donne juste le droit de lecture (SELECT), pas de modif.
+
+- 1. On crée les utilisateurs (s'ils n'existent pas)
+CREATE USER IF NOT EXISTS 'KAKA'@'localhost' IDENTIFIED BY 'pass';
+CREATE USER IF NOT EXISTS 'KOKO'@'localhost' IDENTIFIED BY 'pass';
+
+- 2. On donne le Feu Vert "SELECT" uniquement sur la table Facture
+GRANT SELECT ON Facture TO 'KAKA'@'localhost';
+GRANT SELECT ON Facture TO 'KOKO'@'localhost';
+
+- Maintenant, ils peuvent faire "SELECT * FROM Facture", mais pas "DELETE" ni "UPDATE".
+
+==============================================================================
+-- Q10 : Supprimer le droit de consultation de T1 pour KOKO.
+-- ==============================================================================
+-- Analyse : On utilise REVOKE (Retirer le droit).
+-- Syntaxe : REVOKE [Droit] ON [Table] FROM [Utilisateur]
+
+REVOKE SELECT ON Facture FROM 'KOKO'@'localhost';
+
+- Résultat : KAKA peut toujours voir la table, mais KOKO est bloqué.
+
+==============================================================================
+-- Q11 : Supprimer la table T2 (Article).
+-- ==============================================================================
+-- Analyse : La commande est DROP TABLE.
+-- Problème : 'Lign_Fac' pointe vers 'Article'. SQL bloque la suppression par sécurité.
+
+- Solution 1 : On désactive temporairement la vérification des clés (Mode "Force")
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE Article;
+SET FOREIGN_KEY_CHECKS = 1; -- On réactive la sécurité après
+
+- Solution 2 (Méthode douce) : On supprime d'abord la table fille
+-- DROP TABLE Lign_Fac;
+-- DROP TABLE Article;
