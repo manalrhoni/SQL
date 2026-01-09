@@ -30,4 +30,16 @@ CREATE INDEX idx_ville ON Etudiants (Ville);
 
 Il ne faut pas mettre des index partout car ils **ralentissent les écritures** (`INSERT`, `UPDATE`, `DELETE`).
 
+
+## 4. Comment ça marche techniquement ? (L'Arbre B)
+C'est le cœur du système. Quand tu crées un index, SQL ne fait pas juste une liste. Il organise les données sous forme d'une structure appelée Arbre B (B-Tree) ou Arbre Équilibré.
+
+Le fonctionnement de l'Arbre B : Au lieu de stocker les données en vrac, l'Arbre B les stocke de manière hiérarchique et triée (Racine → Branches → Feuilles).
+
+Racine : SQL regarde le point de départ.
+
+Navigation : Si tu cherches la valeur "50", et que la racine dit "Gauche < 100", il élimine instantanément tout le côté droit.
+
+Rapidité : À chaque étape de l'arbre, il élimine une énorme partie des données. C'est pour cela qu'on trouve l'info très vite, même dans des millions de lignes.
+
 * **Pourquoi ?** Parce qu'à chaque fois qu'on ajoute ou modifie une donnée, le système doit mettre à jour la table **ET** l'index.
