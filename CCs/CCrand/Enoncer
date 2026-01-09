@@ -1,0 +1,14 @@
+EXAMEN : GESTION DES NOTES
+
+Soit la base de données suivante :
+
+    Etudiants (<ins>Code_Etudiant</ins>, Nom_Etudiant, Prenom_Etudiant, Ville_Etudiant)
+    Matieres (<ins>Code_Matiere</ins>, Nom_Matiere, Coef_Matiere, Code_Professeur)
+    Notes (<ins>Code_Matiere, Code_Etudiant, CC</ins>, Note)
+
+Questions :
+
+    1. Écrire une requête SQL qui permet la création de la table Notes.
+    2. Écrire une requête SQL qui permet l'affichage de tous les étudiants de la ville de 'Dakhla'.
+    3. Écrire une requête SQL qui permet l'affichage de tous les étudiants qui ont passé au moins un CC avec deux méthodes différentes (Jointure et in).
+    4. Écrire une requête SQL qui permet de calculer la moyenne des notes de la matière 'BDD' de l'étudiant de code 'P00021'.
