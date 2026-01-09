@@ -1,0 +1,31 @@
+📝 Exercice Final : Gestion des Livraisons
+
+Contexte : Cet exercice a été traité lors de la dernière séance. Il couvre la modification de table, les jointures complexes, les agrégations et la division relationnelle par les vues.
+
+1. Dictionnaire de Données (Schéma Relationnel)
+    Voici la structure de la base de données :
+
+        Clients (<ins>Cod_cli</ins>, Nom_cli, Pre_cli, Vil_cli)
+        Note : La colonne Vil_cli (Ville) n'existe pas au début, elle doit être ajoutée.
+        Articles (<ins>Cod_Art</ins>, Nom_Art, PU_Art, Poid_UT)
+        PU_Art : Prix Unitaire.
+        Poid_UT : Poids Unitaire d'un article.
+        Vehicules (<ins>Imma_Veh</ins>, Nom_chauf, Poid_Veh_Max)
+        Poid_Veh_Max : La charge maximale que le véhicule peut supporter.
+        Livraisons (<ins>Cod_cli, Cod_Art, Date_liv</ins>, Qte_liv, Imma_Veh, Km_Dep, Km_Arr)
+
+  Clé Primaire : Composée de 3 attributs (Un client peut commander le même article à des dates différentes).
+  Clés Étrangères : Vers Clients, Articles et Véhicules.
+  Km_Dep : Kilométrage au départ.
+  Km_Arr : Kilométrage à l'arrivée.
+
+2. Les Questions (Travail à faire)
+   a. Ajouter la colonne Ville (Vil_cli) à la table Clients.
+   b. Écrire la requête de création de la table Livraisons (en précisant bien les clés).
+   c. Afficher la liste des clients qui n'ont jamais reçu de livraison.
+   d. La Requête Complexe : Afficher les livraisons des clients habitant à 'Tanger', dont le poids total de la marchandise dépasse la capacité du véhicule (Poid_Veh_Max) de 10%, ET dont la distance parcourue dépasse 3000 Km.
+   e. Afficher le nombre de commandes pour les clients de 'Tanger', uniquement pour ceux qui ont passé plus de 100 commandes.
+   f. Calculer la somme des kilomètres parcourus par chaque chauffeur.
+   g. Division Relationnelle : 
+         Lister les chauffeurs qui ont conduit TOUS les véhicules de l'entreprise. 
+         (Utiliser la méthode des Vues : R1, R2, R3 comme vu en cours).
